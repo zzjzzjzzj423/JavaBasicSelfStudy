@@ -86,4 +86,60 @@ public class OperationBasic {
         return result;
     }
 
+    public void meetSeven(int a,int b){
+        for(int i=a;i<b+1;i++){
+            if(i%7==0){
+                System.out.println(i+"过");
+            } else {
+                int record=i;
+                while(record!=0){
+                    if(record%10==7){
+                        System.out.println(i+"过");
+                    }
+                    record=record/10;
+                }
+
+            }
+        }
+    }
+
+    public int getSquare(int a){
+        int result=0;
+        for(int i=a/2;i>=1;i--){
+             if(a/i==i){
+                 result=i;
+             }
+        }
+        for(int i=1;i<=a/2;i++){
+            if(i*i<a&&(i+1)*(i+1)>a){
+                result=i;
+            }
+        }
+        return result;
+    }
+
+    public boolean judgePrime(int a){
+        for(int i=2;i<=a/2;i++){
+            if(a%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void stackJava(int b){
+        int[] array=new int[2];
+        int a=0;
+        a=a+b;
+        array[0]=a;
+        array[1]=b;
+        System.out.println("array[0]="+array[0]+",array[1]="+array[1]);
+    }
+
+
+    public void testcs(int[] arr){
+        arr[1]=1;
+        arr[0]=2;
+    }
+
 }
