@@ -86,6 +86,8 @@
 
 15 StringBuilder的机制， StringBuilder会自带16的容量当超出的时候会进行扩容， 扩容到34， 倘若再超出就会变成实际长度的大小
 
+16. 集合只能存引用数据类型如Integer， String
+
 
 
 
