@@ -52,6 +52,8 @@
 
 10. 对于字节的范围的判断可以直接判断， 如要判断小写字母就直接  'a'<x<'z'即可， 而且需注意， 如果是有单引号就是ascii 转换后的值， 如果直接就是ascii码.
 
+  10.1 倘若 是int a='0'-48  那么就等于0.
+
 11. 当你有char数组， 你需要转换成String类型可以 new String(char[])
 
 12. StringBuilder 是可以改变的，打印StringBuilder是打印属性值而不是地址值， StringBuilder只是容器不是字符串， 所以最好用toString换成String类型
