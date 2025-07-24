@@ -1,0 +1,53 @@
+ 1.java.lang.Math
+   
+    作用：
+    提供基本的数学运算函数，全部是静态方法，无需实例化。
+    
+    常用方法
+    
+    Math.abs(x)：求绝对值
+    
+    Math.max(a, b) / Math.min(a, b)：求最大值/最小值
+    
+    Math.pow(a, b)：幂运算，返回 a^b
+    
+    Math.sqrt(x)：平方根
+    
+    Math.log(x) / Math.log10(x)：自然对数 / 10 为底对数
+    
+    Math.sin(x)、Math.cos(x)、Math.tan(x)：三角函数
+    
+    Math.ceil(x)、Math.floor(x)、Math.round(x)：上取整、下取整、四舍五入
+    
+    Math.random()：返回 [0.0,1.0) 范围的伪随机 double
+
+2. java.lang.System
+  
+    作用：
+    提供访问与 JVM 运行环境相关的底层资源与信息，其大部分方法和字段均为静态的。
+    
+    常用字段
+    
+    System.in：标准输入流（InputStream）
+    
+    System.out：标准输出流（PrintStream）
+    
+    System.err：标准错误流（PrintStream）
+
+    时间原点 1970.1.1
+    
+    常用方法
+    
+    System.currentTimeMillis() / System.nanoTime()：分别返回当前时间的毫秒值 / 纳秒值
+    
+    System.arraycopy(src, srcPos, dest, destPos, length)：数组拷贝
+    
+    System.getProperty(key) / System.setProperty(key, value)：获取/设置系统属性
+    
+    System.getenv(key)：获取环境变量
+    
+    System.exit(status)：终止当前 JVM，返回码为 status
+    
+    System.gc()：建议 JVM 进行垃圾回收（仅为建议，不保证立即回收）
+
+  
