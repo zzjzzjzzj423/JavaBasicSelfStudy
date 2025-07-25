@@ -101,15 +101,28 @@ public static boolean nonNull(Object obj)                                       
 
 6. BigInteger
 
-1 如果BigInteger表示的数字没有超出long的范围,可以用静态方法valueof 对-16到16优化获取。
+ 6.1 如果BigInteger表示的数字没有超出long的范围,可以用静态方法valueof 对-16到16优化获取。
+ 
+ 6.2 如果BigInteger表示的超出long的范围,可以用构造方法获取。
+ 
+ 6.3 对象一旦创建,BigInteger内部记录的值不能发生改变。
+ 
+ 6.4 只要进行计算都会产生一个新的BigInteger对象
 
-2 如果BigInteger表示的超出long的范围,可以用构造方法获取。
+ 6.5 将数字分段存入数组
 
-3 对象一旦创建,BigInteger内部记录的值不能发生改变。
-
-4 只要进行计算都会产生一个新的BigInteger对象
+7.
 
 
+ 7.1 如果要表示的数字不大,没有超出double的取值范围,建议使用静态方法
+
+ 7.2 如果要表示的数字比较大,超出了double的取值范围,建议使用构造方法
+
+ 7.3 如果我们传递的是0~10之间的整数,包含0,包含10,那么方法会返回已经创建好的对象,不会重新new
+
+
+
+ 注意除法舍入模式
 
 
 
