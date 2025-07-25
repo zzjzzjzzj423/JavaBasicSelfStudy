@@ -50,4 +50,38 @@
     
     System.gc()：建议 JVM 进行垃圾回收（仅为建议，不保证立即回收）
 
+3. java.lang.Runtime
+  
+ 作用：代表当前 Java 应用程序的运行时环境。它把一些底层的操作系统级功能封装成对象方法，需要通过 Runtime.getRuntime() 获取单例。
+
+ 常用方法
+
+ Runtime.getRuntime()：获得 Runtime 对象
+
+ freeMemory() / totalMemory() / maxMemory()：查看 JVM 内存使用情况
+
+ exec(String command)：在操作系统中执行外部命令，返回 Process
+
+ addShutdownHook(Thread hook)：注册 JVM 关闭时要运行的钩子线程
+
+ gc()：建议进行垃圾回收（与 System.gc() 等价）
+
+
+4. Object
+
+ Object是Java中的顶级父类， 所有类都简介或直接继承与Object
+
+ 4.1 Object的构造方法只有无参构造。
+
+ 4.2 Object的成员方法
+
+  a. toString() 转化成String类型 包名类名@地址值， 如果不想看到抽线的这个， 就在类中对这个方法重写
+
+  b. equals() Object类中equals是用==直接判断， 所以会比较地址值。 可以重写比较属性值
+
+  c. 对象克隆
+
+   浅克隆：不管对象内部的属性是基本数据类型还是引用数据类型,都完全拷贝过来 即一个中数组的值被改了另外一个也要改
+
+   深克隆：基本数据类型拷贝过来，字符串复用，引用数据类型会重新创建新的
   
