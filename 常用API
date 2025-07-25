@@ -111,7 +111,7 @@ public static boolean nonNull(Object obj)                                       
 
  6.5 存储方式：将数字分段存入数组
 
-7. BigDecima
+7. BigDecima（注意除法舍入模式）
 
  7.1 如果要表示的数字不大,没有超出double的取值范围,建议使用静态方法
 
@@ -123,7 +123,7 @@ public static boolean nonNull(Object obj)                                       
 
 
 
- 注意除法舍入模式
+ 
 
 
 
