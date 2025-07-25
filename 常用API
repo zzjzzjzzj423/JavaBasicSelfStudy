@@ -81,7 +81,40 @@
 
   c. 对象克隆
 
-   浅克隆：不管对象内部的属性是基本数据类型还是引用数据类型,都完全拷贝过来 即一个中数组的值被改了另外一个也要改
+   
+
+   浅克隆：不管对象内部的属性是基本数据类型还是引用数据类型,都完全拷贝过来 即一个中数组的值被改了另外一个也要改，object默认浅克隆
 
    深克隆：基本数据类型拷贝过来，字符串复用，引用数据类型会重新创建新的
+
+5. Objects
+
+ 是一个工具类，
+
+ 方法名                                                                                             说明
+
+public static boolean equals(Object a, Object b)                                             先做非空判断  比较两个对象
+
+public static boolean isNu1l(object obj]                                               判断对象是否为null,为null返回true,反之
+
+public static boolean nonNull(Object obj)                                              判断对象是否为null,跟isNull的结果相反
+
+6. BigInteger
+
+1 如果BigInteger表示的数字没有超出long的范围,可以用静态方法valueof 对-16到16优化获取。
+
+2 如果BigInteger表示的超出long的范围,可以用构造方法获取。
+
+3 对象一旦创建,BigInteger内部记录的值不能发生改变。
+
+4 只要进行计算都会产生一个新的BigInteger对象
+
+
+
+
+
+
+
+
+
   
