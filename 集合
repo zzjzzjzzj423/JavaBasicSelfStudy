@@ -1,0 +1,43 @@
+1. Collection（单列集合）
+
+  单列集合祖宗接口，它的功能全部单列接口都可继承使用
+
+  1.1 List： 有序（存取顺序）， 可重复， 有索引
+
+
+  1.2 Set： 添加无顺序， 不重复， 无索引
+
+
+  1.3 如果List中存储的是自定义对象使用contain 的时候需要重写equals方法 因为contains底层依赖equals
+
+  1.4 遍历
+
+    a. 迭代器遍历
+      
+      Collection集合获取迭代器
+      
+      方法名称
+      
+      Iterator<E> iterator()说明:返回迭代器对象,默认指向当前集合的0索引
+      
+      Iterator中的常用方法
+      
+      方法名称
+      
+      boolean hasNext() 说明:判断当前位置是否有元素,有元素返回true,没有元素返回false，
+      
+      next ()<E>。：获取当前位置的元素并将迭代器对象移向下一个位置
+
+      a.1 迭代器注意事项：迭代过程不能调用集合的方法， 如果需要删除可以使用迭代器的remove 方法
+
+      a.2 迭代器注意事项：迭代完毕后指针不会复位
+
+
+    b. 增强for遍历
+
+      for (数据类型 变量名: list/map){}
+
+    c.  foreach(重写consumer的accept)
+
+
+2. Map
