@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 public class StringStudy {
 
@@ -81,6 +82,15 @@ public class StringStudy {
         }
     }
 
+    public String joinerPrintSpec(int[] arr) {
+        StringJoiner joiner=new StringJoiner(",","[","]");
+        for(int i=0;i<arr.length;i++) {
+            joiner.add(arr[i]+"");
+        }
+        return joiner.toString();
+
+    }
+
     public String reverseStr(String str) {
         char[] reverseArray=new char[str.length()];
         int size=str.length();
@@ -88,6 +98,114 @@ public class StringStudy {
             reverseArray[i]=str.charAt(size-i-1);
         }
         return new String(reverseArray);
+    }
+
+    public String judgeMoney(int money) {
+        switch (money){
+            case 0:
+                return "零";
+            case 1:
+                return "壹";
+            case 2:
+                return "贰";
+            case 3:
+                return "叁";
+            case 4:
+                return "肆";
+            case 5:
+                return "伍";
+            case 6:
+                return "陆";
+            case 7:
+                return "柒";
+            case 8:
+                return "捌";
+            case 9:
+                return "玖";
+            case 10:
+                return "拾";
+        }
+    return "";
+    }
+
+    public String judgeUnit(int unit) {
+        switch (unit) {
+            case 0:
+                return "元";
+            case 1:
+                return  "拾";
+            case 2:
+                return "佰";
+            case 3:
+                return "迁";
+            case 4:
+                return "万";
+            case 5:
+                return "拾";
+            case 6:
+                return "佰";
+
+        }
+        return "";
+
+    }
+
+    public String convertString(int money) {
+            String result="";
+            for(int i=0;i<7;i++) {
+                int number=money%10;
+                result=judgeMoney(number)+judgeUnit(i)+result ;
+                money=money/10;
+            }
+            return result;
+    }
+
+    public boolean judgeFolder(String str){
+        StringBuilder sb=new StringBuilder(str);
+
+        return sb.reverse().toString().equals(sb.reverse().toString());
+    }
+
+    public String convertRoman(String number)
+    {
+        StringBuilder result=new StringBuilder();
+        if(number.length()>9) {
+            return result.toString();
+        }
+
+        String[] arr={"","Ⅰ","Ⅱ","Ⅲ","Ⅳ","Ⅴ","Ⅵ","Ⅶ","Ⅷ","Ⅸ"};
+        for(int i=0;i<number.length();i++) {
+            if(number.charAt(i)>='0'&&number.charAt(i)<='9') {
+            int index=number.charAt(i)-'0';
+            result.append(arr[index]);
+            }else{
+                return null;
+            }
+        }
+        return result.toString();
+
+    }
+
+
+    public boolean spinStr(String str_source, String str_target) {
+        if(str_source.length()!=str_target.length()) {
+            return false;
+        }
+        StringBuilder temp=new StringBuilder(str_source);
+
+
+        for(int i=0;i<str_source.length();i++) {
+            String partStr=temp.substring(1,str_source.length());
+            String speChar=temp.charAt(0)+"";
+            StringBuilder sb=new StringBuilder(partStr).append(speChar);
+            temp=sb;
+            if(sb.toString().equals(str_target)) {
+                return true;
+            }
+        }
+        return false;
+
+
     }
 
 
@@ -107,7 +225,16 @@ public class StringStudy {
 //        new StringStudy().printSpec(arr);
         Scanner sc1=new Scanner(System.in);
         String input1=sc1.next();
-        System.out.println("反转为:"+new StringStudy().reverseStr(input1));
+        Scanner sc2=new Scanner(System.in);
+        String input2=sc2.next();
+        if(new StringStudy().spinStr(input1,input2)){
+            System.out.println("true");
+        }else {
+            System.out.println("false");
+        }
+
+        int a='0'-48;
+        System.out.println("a="+a);
 
     }
 }
