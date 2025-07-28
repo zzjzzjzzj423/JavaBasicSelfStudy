@@ -19,7 +19,7 @@ public class StreamDemo7 {
         ArrayList<String> list1 = new ArrayList<>();
         Collections.addAll(list1, "周芷若","赵敏");
 
-       // list.stream().distinct().forEach(s-> System.out.println(s));
+       list.stream().distinct().forEach(s-> System.out.println(s));
         Stream.concat(list1.stream(), list.stream()).forEach(s-> System.out.println(s));
 
     }
