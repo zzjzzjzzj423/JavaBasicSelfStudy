@@ -48,8 +48,9 @@ public class exericise6 {
         for(File f:files){
             if(f.isDirectory()){
                 deleteFolder(f);
-            }
+            }else{
                 f.delete();
+            }
         }
         folder.delete();
     }
@@ -60,11 +61,14 @@ public class exericise6 {
             if (f.isDirectory()){
                 countFile(f,result);
             }else{
-                String suffix=f.getName().split("\\.")[1];
-                if(result.containsKey(suffix)){
-                    result.put(suffix,result.get(suffix)+1);
-                }else {
-                    result.put(suffix,1);
+                String[] nameArray=f.getName().split("\\.");
+                if(nameArray.length>=2){
+                    String suffix=nameArray[nameArray.length-1];
+                    if(result.containsKey(suffix)){
+                        result.put(suffix,result.get(suffix)+1);
+                    }else {
+                        result.put(suffix,1);
+                    }
                 }
             }
         }
@@ -72,19 +76,20 @@ public class exericise6 {
     }
 
     public static void main(String[] args) throws IOException {
-        File file=new File("D:\\JavaBasicSelfStudy\\FileStudy\\src\\com\\Itheima\\execrise\\aaa\\a.txt");
-        file.createNewFile();
-
-
-        File folder=new File("D:\\JavaBasicSelfStudy\\FileStudy\\src\\com\\Itheima\\execrise\\aaa");
-        if(new exericise6().findAvi(folder)){
-            System.out.println("find avi");
-        }else{
-            System.out.println("not find avi");
-        }
+//        File file=new File("D:\\JavaBasicSelfStudy\\FileStudy\\src\\com\\Itheima\\execrise\\aaa\\a.txt");
+//        file.createNewFile();
+//
+//
+//        File folder=new File("D:\\JavaBasicSelfStudy\\FileStudy\\src\\com\\Itheima\\execrise\\aaa");
+//        if(new exericise6().findAvi(folder)){
+//            System.out.println("find avi");
+//        }else{
+//            System.out.println("not find avi");
+//        }
 
         File countFolder=new File("D:\\JavaBasicSelfStudy\\FileStudy\\src\\com\\Itheima\\execrise\\www");
-        new exericise6().deleteFolder(folder);
+//        File deleteFolder=new File("D:\\JavaBasicSelfStudy\\FileStudy\\src\\com\\Itheima\\execrise\\wwwwww");
+//        new exericise6().deleteFolder(deleteFolder);
         HashMap<String,Integer> count=new HashMap<>();
         System.out.println(new exericise6().countFile(countFolder,count));
 
