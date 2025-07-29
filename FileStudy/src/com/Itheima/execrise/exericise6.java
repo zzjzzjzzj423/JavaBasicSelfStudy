@@ -48,10 +48,10 @@ public class exericise6 {
         for(File f:files){
             if(f.isDirectory()){
                 deleteFolder(f);
-            }else{
-                f.delete();
             }
+                f.delete();
         }
+        folder.delete();
     }
 
     public HashMap<String,Integer> countFile(File folder,HashMap<String,Integer> result) {
@@ -83,12 +83,10 @@ public class exericise6 {
             System.out.println("not find avi");
         }
 
-        System.out.println(new exericise6().findAviDeeply(folder));
-
-        File deleteFolder=new File("D:\\JavaBasicSelfStudy\\FileStudy\\src\\com\\Itheima\\execrise\\www");
-//        new exericise6().deleteFolder(deleteFolder);
+        File countFolder=new File("D:\\JavaBasicSelfStudy\\FileStudy\\src\\com\\Itheima\\execrise\\www");
+        new exericise6().deleteFolder(folder);
         HashMap<String,Integer> count=new HashMap<>();
-        System.out.println(new exericise6().countFile(deleteFolder,count));
+        System.out.println(new exericise6().countFile(countFolder,count));
 
     }
 }
