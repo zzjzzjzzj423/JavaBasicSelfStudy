@@ -2,6 +2,8 @@ package com.Itheima.execrise;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class exericise6 {
 
@@ -46,9 +48,27 @@ public class exericise6 {
         for(File f:files){
             if(f.isDirectory()){
                 deleteFolder(f);
+            }else{
+                f.delete();
             }
-            f.delete();
         }
+    }
+
+    public HashMap<String,Integer> countFile(File folder,HashMap<String,Integer> result) {
+        File[] files=folder.listFiles();
+        for(File f:files){
+            if (f.isDirectory()){
+                countFile(f,result);
+            }else{
+                String suffix=f.getName().split("\\.")[1];
+                if(result.containsKey(suffix)){
+                    result.put(suffix,result.get(suffix)+1);
+                }else {
+                    result.put(suffix,1);
+                }
+            }
+        }
+        return result;
     }
 
     public static void main(String[] args) throws IOException {
@@ -66,7 +86,9 @@ public class exericise6 {
         System.out.println(new exericise6().findAviDeeply(folder));
 
         File deleteFolder=new File("D:\\JavaBasicSelfStudy\\FileStudy\\src\\com\\Itheima\\execrise\\www");
-        new exericise6().deleteFolder(deleteFolder);
+//        new exericise6().deleteFolder(deleteFolder);
+        HashMap<String,Integer> count=new HashMap<>();
+        System.out.println(new exericise6().countFile(deleteFolder,count));
 
     }
 }
