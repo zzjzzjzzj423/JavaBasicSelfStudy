@@ -6,9 +6,30 @@ class Student implements Comparable<Student>{
     String name;
     int age;
 
+    public Student(){
+
+    }
     public Student(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+
+
+    public Student(String stuInfo){
+
+        String[] info = stuInfo.split(",");
+        this.name = info[0];
+        this.age = Integer.parseInt(info[1]);
+    }
+
+    public String getNameFromStuInfo(Student student) {
+
+        return student.name;
+    }
+
+    public String combineStudent(Student student) {
+        return student.name + "-" + student.age;
     }
 
     @Override
@@ -18,7 +39,7 @@ class Student implements Comparable<Student>{
     }
 
 
-    //对象作为键需要重写hashcode以及toString方法
+    //对象作为键需要重写hashcode以及equals方法
     @Override
     public int hashCode() {
         return Objects.hash(name, age);
