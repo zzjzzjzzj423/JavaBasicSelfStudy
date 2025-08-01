@@ -8,7 +8,7 @@ public class exericise12 {
     public static void main(String[] args) throws IOException {
         FileWriter fw=new FileWriter("D:\\JavaBasicSelfStudy\\IOstream\\src\\TEST\\b.txt");
 
-        for(int i=0;i<8192;i++){
+        for(int i=0;i<512;i++){
             fw.write(97);
         }
         System.out.println("s");
